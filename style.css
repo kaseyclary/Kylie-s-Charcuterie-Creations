@@ -8,13 +8,13 @@
   width: 100vw;
 }
 
-#hero {
+#hero, #options .optionsImg {
   color: #fff;
   background: #000;
   position: relative;
 }
 
-#hero:before {
+#hero:before, #options .optionsImg:before {
   content: '';
   position: absolute;
   top: 0;
@@ -24,7 +24,7 @@
   opacity: 0.4;
 }
 
-#nav, #hero, #summary .smallTextArea, #options .sectionTitle {
+#nav, #hero, #summary .smallTextArea, #options .sectionTitle, #options .optionsImg, #parallaxBreak, .parallaxImg, #about, #about #aboutContent #aboutText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,18 +199,79 @@ p {
   width: 100vw;
   height: 10vh;
   background-color: #395C6B;
-  font-size: 2rem;
-  color: #fff;
+}
+
+#options {
+  background-color: #141313;
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-rows: 10vh 45vh 45vh;
+      grid-template-rows: 10vh 45vh 45vh;
+  -ms-grid-columns: 50vw 50vw;
+      grid-template-columns: 50vw 50vw;
+}
+
+#options .sectionTitle {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/span 2;
+  background-color: #395C6B;
+  font-size: 2.5rem;
+  color: #f1f1f1;
+}
+
+#options .optionsImg {
+  height: 100%;
+  width: 100%;
+}
+
+#options #brunchImg:before {
+  background: url("./images/brunch.jpg") no-repeat center center/cover;
+}
+
+#options #charcImg {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#options #charcImg:before {
+  background: url("./images/standard.jpg") no-repeat center center/cover;
+}
+
+#options .medTextArea {
+  padding: 3rem;
+  color: #f1f1f1;
 }
 
 #parallaxBreak {
   width: 100vw;
   height: 25vh;
+  background-color: #000;
+}
+
+#parallaxBreak h1 {
+  position: absolute;
+  font-size: 5rem;
+  color: #f1f1f1;
 }
 
 .parallaxImg {
   /* The image used */
+  position: relative;
   background-image: url("./images/hero.jpg");
+  opacity: 0.4;
   /* Full height */
   height: 25vh;
   width: 100vw;
@@ -219,5 +280,60 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#about {
+  height: 75vh;
+  width: 100vw;
+}
+
+#about #aboutContent {
+  height: 75%;
+  width: 60%;
+  position: relative;
+}
+
+#about #aboutContent #profileImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 25vh;
+  width: 15vw;
+  border-radius: 50%;
+  border: 3px solid #735150;
+  background: url("/images/profile.jpg") no-repeat center center/cover;
+}
+
+#about #aboutContent #aboutText {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem;
+  color: #f1f1f1;
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  z-index: 1;
+  border: 1px solid #735150;
+  background-color: #f1f1f1;
+  border-radius: 3rem;
+  height: 95%;
+  width: 95%;
+  background-image: linear-gradient(-45deg, #735150, #735150ad);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.349) 0px 10px 30px;
+          box-shadow: rgba(0, 0, 0, 0.349) 0px 10px 30px;
+}
+
+#about #aboutContent #aboutText h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+#about #aboutContent #aboutText p {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
